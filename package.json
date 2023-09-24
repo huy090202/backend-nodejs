@@ -1,0 +1,27 @@
+{
+  "name": "full-backend-zero",
+  "version": "1.0.0",
+  "description": "Hoi dan it fullstack backend zero",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/huy090202/udemy-funstack-backend-zero.git"
+  },
+  "keywords": [
+    "nodejs",
+    "react"
+  ],
+  "author": "hoidanit",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/huy090202/udemy-funstack-backend-zero/issues"
+  },
+  "homepage": "https://github.com/huy090202/udemy-funstack-backend-zero#readme",
+  "dependencies": {
+    "express": "4.18.2"
+  }
+}
