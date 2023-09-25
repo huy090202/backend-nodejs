@@ -1,1 +1,3 @@
 node_modules
+# khong chia se file .env cho cong ty, neu can thi chia se file .env.example
+# .env 
