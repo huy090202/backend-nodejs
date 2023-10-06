@@ -3,6 +3,7 @@ const {
   getAllUsers,
   getUserById,
   updateUserById,
+  deleteUserById,
 } = require("../services/CRUDservices");
 
 const getHomePage = async (req, res) => {
@@ -48,7 +49,7 @@ const postCreatUser = async (req, res) => {
     `INSERT INTO Users (email, name, city) VALUES(?, ?, ?)`,
     [email, name, city]
   );
-  res.send("Create user succseed!");
+  res.redirect("/");
 };
 
 const getCreateUsers = (req, res) => {
@@ -75,6 +76,19 @@ const postUpdateUser = async (req, res) => {
   res.redirect("/");
 };
 
+const postDeleteUser = async (req, res) => {
+  const userId = req.params.id;
+  let user = await getUserById(userId);
+  res.render("deleteUsers.ejs", { userDelete: user }); // x <- y
+};
+
+const confirmDelete = async (req, res) => {
+  let userId = req.body.userId;
+
+  await deleteUserById(userId);
+  res.redirect("/");
+};
+
 module.exports = {
   getHomePage,
   getAbc,
@@ -83,4 +97,6 @@ module.exports = {
   getCreateUsers,
   getUpdateUsers,
   postUpdateUser,
+  postDeleteUser,
+  confirmDelete,
 };
